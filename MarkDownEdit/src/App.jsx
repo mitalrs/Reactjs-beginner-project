@@ -3,14 +3,14 @@ import "./App.css";
 
 function App() {
   const textarearef = useRef();
-  function insertAtCursor(start, end) {
+  function insertAtCursor(start, end, offsetStart=0, offsetEnd=0) {
     
     let cursorStart = textarearef.current.selectionStart;
     let cursorEnd = textarearef.current.selectionEnd;
 
 
     textarearef.current.value =
-      textarearef.current.value.substring(0, cursorStart) +
+      textarearef.current.value.substring(0, cursorStart+offsetStart) +
       start +
       textarearef.current.value.substring(cursorStart, cursorEnd) +
       end +
@@ -35,10 +35,12 @@ function App() {
     insertAtCursor("`", "`");
   }
   function handleHeaderOne(e){
-    if("#"){
-      insertAtCursor("\n\n#", "")
+    const textAreaStr = textarearef.current.value.substring(0,textarearef.current.selectionStart);
+    
+    if(checkCharAtLast(textAreaStr,'#')){
+      insertAtCursor("# ","",-1)
     }else{
-      insertAtCursor("#", "")
+    insertAtCursor("\n\n#", "\n\n");
     }
     
   }
@@ -50,6 +52,11 @@ function App() {
   }
   function handleHeaderFour(){
     insertAtCursor("\n\n#### ", "")
+  }
+
+  const checkCharAtLast = (str,chr) => {
+    // console.log(str.substring(str.length-2,str.length).split('').includes('#'));
+    return str.substring(str.length-2,str.length).split('').includes(chr);
   }
 
   return (
