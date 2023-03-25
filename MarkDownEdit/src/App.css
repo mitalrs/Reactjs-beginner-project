@@ -1,35 +1,66 @@
+#root{
+  padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 .App {
+  background-color: black;
   align-items:center;
    width: 100vw;
   height: 100vh;
-  display: flex;
-  position:relative;
+  overflow: hidden;
 }
 h1{
-  margin: 10px;
-  position: absolute;
-  top: 20px;
+  margin: 20px;
+}
+.wraap{
+  height: 89%;
+  width: 99.5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .nav{
-  height: 700px;
-  width: 29%;
+  background-color: black;
+  height: 100%;
+  width: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .nav button{
+  background-color: black;
   width: 80%;
   margin-bottom: 10px;
   color: black;
   background-color: rgb(211, 210, 210);
 }
 
+.main{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 89%;
+  position:relative;
+}
+
 .textArea{
   position: absolute;
+  height: 99%;
+  width: 50%;
+  border-style: none;
+  background-color: rgb(20, 20, 20);
+}
+.textArea:focus{
+  outline: 0px;
+  
+}
+.markdounPriview{
+  position: absolute;
   right: 0;
-  bottom: 0;
-  height: 87%;
-  width: 70%;
+  height: 100%;
+  width: 50%;
+  background-color: rgb(30, 30, 30);
 }
