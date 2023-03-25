@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const textarearef = useRef();
   function insertAtCursor(start, end) {
+    
     let cursorStart = textarearef.current.selectionStart;
     let cursorEnd = textarearef.current.selectionEnd;
 
@@ -17,6 +18,8 @@ function App() {
         cursorEnd,
         textarearef.current.value.length
       );
+      textarearef.current.focus();
+      textarearef.current.setSelectionRange(cursorStart+start.length,cursorEnd+start.length)
   }
 
   function handleBold() {
@@ -31,8 +34,13 @@ function App() {
   function handleCode() {
     insertAtCursor("`", "`");
   }
-  function handleHeaderOne(){
-    insertAtCursor("\n\n# ", "")
+  function handleHeaderOne(e){
+    if("#"){
+      insertAtCursor("\n\n#", "")
+    }else{
+      insertAtCursor("#", "")
+    }
+    
   }
   function handleHeaderTwo(){
     insertAtCursor("\n\n## ", "")
@@ -51,11 +59,12 @@ function App() {
         <button onClick={handleBold}>Bold</button>
         <button onClick={handleItelic}>Itelic</button>
         <button
-          onClick={() => {
-            handleHeaderOne();
-            handleHeaderTwo();
-            handleHeaderThree();
-            handleHeaderFour();
+          onClick={(e) => {
+           "\n\n"
+            handleHeaderOne(e);
+            // handleHeaderTwo();
+            // handleHeaderThree();
+            // handleHeaderFour();
           }}
         >
           header
