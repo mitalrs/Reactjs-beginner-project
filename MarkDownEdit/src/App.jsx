@@ -58,6 +58,9 @@ function App() {
   function handleBlokquote() {
     insertAtCursor("\n\n> ", "\n\n");
   }
+  function handleTable() {
+    insertAtCursor("\n\n| ", "|  |\n|----|--|\n|----|--|\n\n");
+  }
 
   function handleHeaderOne(e) {
     const textAreaStr = markdownString.substring(
@@ -101,9 +104,9 @@ function App() {
         <button onClick={handleBulletOl}>bulletOL</button>
         <button onClick={handleCheckBox}>checkBOx</button>
         <button onClick={handleBlokquote}>Blockquote</button>
-          <button onClick={handleCode}>code</button>
-          {/* <button onClick={handleTable}>table</button>
-        <button onClick={handleLink}>Link</button>
+        <button onClick={handleCode}>code</button>
+        <button onClick={handleTable}>table</button>
+        {/* <button onClick={handleLink}>Link</button>
         <button onClick={handleimg}>img</button> */}
         </nav>
         <main className="main">
