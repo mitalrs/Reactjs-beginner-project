@@ -29,8 +29,8 @@ function App() {
     );
     textarearef.current.focus();
     textarearef.current.setSelectionRange(
-      cursorStart + start.length,
-      cursorEnd + start.length
+      setCursorStart(cursorStart + start.length),
+      setCursorEnd(cursorEnd + start.length)
     );
   }
 
@@ -46,6 +46,19 @@ function App() {
   function handleCode() {
     insertAtCursor("`", "`");
   }
+  function handleBulletUl() {
+    insertAtCursor("\n\n- ", "\n\n");
+  }
+  function handleBulletOl() {
+    insertAtCursor("\n\n1. ", "\n\n");
+  }
+  function handleCheckBox() {
+    insertAtCursor("\n\n- [ ] ", "\n\n");
+  }
+  function handleBlokquote() {
+    insertAtCursor("\n\n> ", "\n\n");
+  }
+
   function handleHeaderOne(e) {
     const textAreaStr = markdownString.substring(
       0,
@@ -58,15 +71,7 @@ function App() {
       insertAtCursor("\n\n#", "\n\n");
     }
   }
-  function handleHeaderTwo() {
-    insertAtCursor("\n\n## ", "");
-  }
-  function handleHeaderThree() {
-    insertAtCursor("\n\n### ", "");
-  }
-  function handleHeaderFour() {
-    insertAtCursor("\n\n#### ", "");
-  }
+
 
   const checkCharAtLast = (str, chr) => {
     // console.log(str.substring(str.length-2,str.length).split('').includes('#'));
@@ -87,18 +92,15 @@ function App() {
             onClick={(e) => {
               "\n\n";
               handleHeaderOne(e);
-              // handleHeaderTwo();
-              // handleHeaderThree();
-              // handleHeaderFour();
             }}
           >
             header
           </button>
           <button onClick={handleEraser}>Eraser</button>
-          {/* <button onClick={handleBulletUl}>bulletUL</button>
+          <button onClick={handleBulletUl}>bulletUL</button>
         <button onClick={handleBulletOl}>bulletOL</button>
         <button onClick={handleCheckBox}>checkBOx</button>
-        <button onClick={handleBlokquote}>Blockquote</button> */}
+        <button onClick={handleBlokquote}>Blockquote</button>
           <button onClick={handleCode}>code</button>
           {/* <button onClick={handleTable}>table</button>
         <button onClick={handleLink}>Link</button>
