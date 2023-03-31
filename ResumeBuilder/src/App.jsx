@@ -1,13 +1,20 @@
-import { useState } from 'react'
-import './App.css'
+import './App.css';
+import AppBar from './Components/AppBar.jsx';
+import Form from './Components/Form.jsx';
+import Template from './Components/Template.jsx';
+import Theme from './Components/Theme.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
+      <AppBar />
+      <Form />
+      <Template />
+      <Theme />
     </div>
   )
 }
 
 export default App
+

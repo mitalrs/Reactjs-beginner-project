@@ -1,4 +1,20 @@
 #root {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
 }
 
+.App{
+  
+}
+.nav{
+  border: 1px solid red;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  font-weight: bold;
+  font-size: 20px;
+}
