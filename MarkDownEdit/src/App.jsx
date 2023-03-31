@@ -11,27 +11,29 @@ function App() {
   const [cursorEnd, setCursorEnd] = useState()
 
   useEffect(() => {
-   textarearef.current.focus()
-  
+   textarearef.current.focus();
   }, [markdownString])
-  
+
+  useEffect(() => {
+    textarearef.current.setSelectionRange(
+     cursorStart,
+     cursorEnd
+   );
+  },[
+    cursorStart,
+    cursorEnd
+  ])
 
   function insertAtCursor(start, end, offsetStart = 0, offsetEnd = 0) {
-    let cursorStart = textarearef.current.selectionStart;
-    let cursorEnd = textarearef.current.selectionEnd;
-
     setMarkdownString(
       markdownString.substring(0, cursorStart + offsetStart) +
         start +
         markdownString.substring(cursorStart, cursorEnd) +
         end +
         markdownString.substring(cursorEnd, markdownString.length)
-    );
-    textarearef.current.focus();
-    textarearef.current.setSelectionRange(
-      setCursorStart(cursorStart + start.length),
-      setCursorEnd(cursorEnd + start.length)
-    );
+    );    
+    setCursorStart(cursorStart + start.length)
+    setCursorEnd(cursorEnd + start.length)
   }
 
   function handleBold() {
@@ -116,6 +118,10 @@ function App() {
             value={markdownString}
             onChange={(e) => {
               setMarkdownString(e.target.value);
+            }}
+            onSelect={(e)=>{
+              setCursorStart(e.target.selectionStart)
+              setCursorEnd(e.target.selectionEnd)
             }}
           ></textarea>
           <div className="markdounPriview">
