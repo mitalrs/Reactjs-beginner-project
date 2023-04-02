@@ -4,7 +4,17 @@ import ReactMarkdown from "markdown-to-jsx";
 import { useState } from "react";
 import { useEffect } from "react";
 //icon Images
-import boldic from "./assets/italic.png";
+import boldIcon from "./assets/bold.svg";
+import italicIcon from "./assets/italic.png";
+import headingIcon from "./assets/heading.svg";
+import eraserIcon from "./assets/erase.png";
+import codeIcon from "./assets/code.webp";
+import tableIcon from "./assets/table.svg.png";
+import orderListIcon from "./assets/orderedlist.svg";
+import unorderListIcon from "./assets/unorderedList.svg";
+import doublequotes from "./assets/doublequotes.svg";
+import checkList from "./assets/checkList.jpeg";
+// import boldIcon from "./assets/bold.svg";
 
 function App() {
   const [markdownString, setMarkdownString] = useState("");
@@ -87,24 +97,40 @@ function App() {
       <div className="wraap">
         <nav className="nav">
           <button onClick={handleBold}>
-            <img src={boldic} alt="Bold" />
+            <img src={boldIcon} alt="Bold" />
           </button>
-          <button onClick={handleItelic}>Itelic</button>
+          <button onClick={handleItelic}>
+          <img src={italicIcon} alt="Bold" />
+          </button>
           <button
             onClick={(e) => {
               "\n\n";
               handleHeaderOne(e);
             }}
           >
-            header
+            <img src={headingIcon} alt="Bold" />
           </button>
-          <button onClick={handleEraser}>Eraser</button>
-          <button onClick={handleBulletUl}>bulletUL</button>
-          <button onClick={handleBulletOl}>bulletOL</button>
-          <button onClick={handleCheckBox}>checkBOx</button>
-          <button onClick={handleBlokquote}>Blockquote</button>
-          <button onClick={handleCode}>code</button>
-          <button onClick={handleTable}>table</button>
+          <button onClick={handleEraser}>
+          <img src={eraserIcon} alt="Bold" />
+          </button>
+          <button onClick={handleBulletUl}>
+          <img src={unorderListIcon} alt="Bold" />
+          </button>
+          <button onClick={handleBulletOl}>
+          <img src={orderListIcon} alt="Bold" />
+          </button>
+          <button onClick={handleCheckBox}>
+          <img src={checkList} alt="Bold" />
+          </button>
+          <button onClick={handleBlokquote}>
+          <img src={doublequotes} alt="Bold" />
+          </button>
+          <button onClick={handleCode}>
+          <img src={codeIcon} alt="Bold" />
+          </button>
+          <button onClick={handleTable}>
+          <img src={tableIcon} alt="Bold" />
+          </button>
           {/* <button onClick={handleLink}>Link</button>
         <button onClick={handleimg}>img</button> */}
         </nav>
