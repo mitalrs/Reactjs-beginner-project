@@ -34,131 +34,151 @@ function Form() {
 
   return (
     <form>
-      <p>Persnol Info</p>
-      <label for="name">Full Name</label>
-      <input type="text" placeholder="Name" id="name" />
+      <div className="container">
+        <p>Persnol Info</p>
+        <label for="name">Full Name</label>
+        <input type="text" placeholder="Name" id="name" />
 
-      <label for="profession">Profession</label>
-      <input type="text" id="profession" placeholder="Software Engineer" />
+        <label for="profession">Profession</label>
+        <input type="text" id="profession" placeholder="Software Engineer" />
 
-      <label for="Contact">Contact</label>
-      <input type="text" id="Contact" placeholder="1234567890" />
+        <label for="Contact">Contact</label>
+        <input type="text" id="Contact" placeholder="+1234567890" />
 
-      <label for="mail">Mail</label>
-      <input type="text" id="mail" placeholder="name@mail.com" />
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" placeholder="name@mail.com" />
 
-      <label for="ProfileId">ProfileId</label>
-      <input type="text" id="ProfileId" placeholder="http://github.com/name1" />
-
-      <p>Summary</p>
-      <textarea value="Summary"></textarea>
-
-      <p>Experience</p>
-      <label for="jobTitle">Job Title</label>
-      <input type="text" id="jobTitle" placeholder="Software Engineer" />
-
-      <label for="company">Company</label>
-      <input type="text" id="company" placeholder="1234567890" />
-
-      <label for="Contact">City &amp; Contry</label>
-      <input type="text" id="Contact" placeholder="1234567890" />
-
-      <label for="startDate">Start Date</label>
-      <input
-        type="date"
-        id="startDate"
-        ref={ref}
-        onChange={(e) => console.log("start", e.target.value)}
-        onFocus={() => (ref.current.type = "date")}
-        onBlur={() => (ref.current.type = "date")}
-      />
-
-      <label for="endDate">End Date</label>
-      <input
-        type="date"
-        id="endDate"
-        ref={ref}
-        onChange={(e) => console.log("end", e.target.value)}
-        onFocus={() => (ref.current.type = "date")}
-        onBlur={() => (ref.current.type = "date")}
-      />
-
-      <label>
-        <input type="checkbox" checked={checked} onChange={handleChange} />I
-        currently work here
-      </label>
-
-      <p>Education</p>
-      <label for="schoolName">School Name</label>
-      <input type="text" id="schoolName" placeholder="xyz univercity" />
-
-      <label for="city">City &amp; Contry</label>
-      <input type="text" id="city" placeholder="Jalgaon,India" />
-
-      <label for="degree">Degree</label>
-      <Select options={options} id="degree" />
-
-      <label for="field">Field of Study</label>
-      <input type="text" id="field" placeholder="computer Science" />
-
-      <label for="startDate">Start Date</label>
-      <input
-        type="date"
-        id="startDate"
-        ref={ref}
-        onChange={(e) => console.log("start", e.target.value)}
-        onFocus={() => (ref.current.type = "date")}
-        onBlur={() => (ref.current.type = "date")}
-      />
-
-      <label for="endDate">End Date</label>
-      <input
-        type="date"
-        id="endDate"
-        ref={ref}
-        onChange={(e) => console.log("end", e.target.value)}
-        onFocus={() => (ref.current.type = "date")}
-        onBlur={() => (ref.current.type = "date")}
-      />
-
-      <label>
-        <input type="checkbox" checked={checked} onChange={handleChange} />I
-        currently attend here
-      </label>
-
-      <p>skills</p>
-      <div>
-        <input type="text" placeholder="Java" />
-        <button type="submit">add</button>
-        <button type="submit">remove</button>
+        <label for="ProfileId">ProfileId</label>
+        <input
+          type="text"
+          id="ProfileId"
+          placeholder="http://github.com/name1"
+        />
       </div>
 
-      <p>Languages</p>
-      <div>
-        <input type="text" placeholder="English" />
-        <button type="submit">add</button>
-        <button type="submit">remove</button>
+      <div className="container">
+        <p>Summary</p>
+        <textarea value="Summary"></textarea>
       </div>
 
-      <p>Intrests</p>
-      <div>
-        <input type="text" placeholder="Web Development" />
-        <button type="submit">add</button>
-        <button type="submit">remove</button>
+      <div className="container">
+        <p>Experience</p>
+        <label for="jobTitle">Job Title</label>
+        <input type="text" id="jobTitle" placeholder="Software Engineer" />
+
+        <label for="company">Company</label>
+        <input type="text" id="company" placeholder="1234567890" />
+
+        <label for="Contact">City &amp; Contry</label>
+        <input type="text" id="Contact" placeholder="1234567890" />
+
+        <label for="startDate">Start Date</label>
+        <input
+          type="date"
+          id="startDate"
+          ref={ref}
+          onChange={(e) => console.log("start", e.target.value)}
+          onFocus={() => (ref.current.type = "date")}
+          onBlur={() => (ref.current.type = "date")}
+        />
+
+        <label for="endDate">End Date</label>
+        <input
+          type="date"
+          id="endDate"
+          ref={ref}
+          onChange={(e) => console.log("end", e.target.value)}
+          onFocus={() => (ref.current.type = "date")}
+          onBlur={() => (ref.current.type = "date")}
+        />
+
+        <label>
+          <input type="checkbox" checked={checked} onChange={handleChange} />I
+          currently work here
+        </label>
       </div>
 
-      <p>Awards</p>
-      <label for="awardsFor">Awards For</label>
-      <input
-        type="text"
-        id="awardsFor"
-        placeholder="Digital Compression Pioneer Award "
-      />
+      <div className="container">
+        <p>Education</p>
+        <label for="schoolName">School Name</label>
+        <input type="text" id="schoolName" placeholder="xyz univercity" />
 
-      <label for="event">Event</label>
-      <input type="text" id="event" placeholder="TechEvent" />
+        <label for="city">City &amp; Contry</label>
+        <input type="text" id="city" placeholder="Jalgaon,India" />
 
-      <textarea value="There is no spoon"></textarea>
+        <label for="degree">Degree</label>
+        <Select options={options} id="degree" />
+
+        <label for="field">Field of Study</label>
+        <input type="text" id="field" placeholder="computer Science" />
+
+        <label for="startDate">Start Date</label>
+        <input
+          type="date"
+          id="startDate"
+          ref={ref}
+          onChange={(e) => console.log("start", e.target.value)}
+          onFocus={() => (ref.current.type = "date")}
+          onBlur={() => (ref.current.type = "date")}
+        />
+
+        <label for="endDate">End Date</label>
+        <input
+          type="date"
+          id="endDate"
+          ref={ref}
+          onChange={(e) => console.log("end", e.target.value)}
+          onFocus={() => (ref.current.type = "date")}
+          onBlur={() => (ref.current.type = "date")}
+        />
+
+        <label>
+          <input type="checkbox" checked={checked} onChange={handleChange} />I
+          currently attend here
+        </label>
+      </div>
+
+      <div className="container">
+        <p>skills</p>
+        <div>
+          <input type="text" placeholder="Java" />
+          <button type="submit">add</button>
+          <button type="submit">remove</button>
+        </div>
+      </div>
+
+      <div className="container">
+        <p>Languages</p>
+        <div>
+          <input type="text" placeholder="English" />
+          <button type="submit">add</button>
+          <button type="submit">remove</button>
+        </div>
+      </div>
+
+      <div className="container">
+        <p>Intrests</p>
+        <div>
+          <input type="text" placeholder="Web Development" />
+          <button type="submit">add</button>
+          <button type="submit">remove</button>
+        </div>
+      </div>
+
+      <div className="container">
+        <p>Awards</p>
+        <label for="awardsFor">Awards For</label>
+        <input
+          type="text"
+          id="awardsFor"
+          placeholder="Digital Compression Pioneer Award "
+        />
+
+        <label for="event">Event</label>
+        <input type="text" id="event" placeholder="TechEvent" />
+
+        <textarea value="There is no spoon"></textarea>
+      </div>
     </form>
   );
 }
